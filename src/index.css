@@ -16,6 +16,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
+  font-size: 18px;
 }
 
 body {
@@ -23,6 +26,21 @@ body {
   background: #f6f1e6;
   color: #172116;
   font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+input,
+textarea {
+  font-size: 1.125rem;
 }
 
 ::selection {
@@ -37,6 +55,7 @@ body {
 
 .ribbon-track {
   animation: drift 42s linear infinite;
+  width: max-content;
 }
 
 @keyframes drift {

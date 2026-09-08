@@ -3,18 +3,20 @@ export const house = {
   short: "Dear One",
   mark: "DOCSE",
   place: "Kokrobite, Ghana",
-  phone: "+233 5581 57666",
-  phoneHref: "tel:+233558157666",
-  whatsapp: "https://wa.me/233558157666",
-  email: "davidmensahedem@gmail.com",
+  phone: "+233242154426",
+  phoneHref: "tel:+233242154426",
+  whatsapp: "https://wa.me/233242154426",
+  email: "test@mail.com",
+  mapEmbed: "https://maps.google.com/maps?q=Kokrobite%2C%20Ghana&z=14&output=embed",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=Kokrobite%2C%20Ghana",
 };
 
 export const nav = [
-  { id: "house", label: "The house" },
-  { id: "offer", label: "The offer" },
-  { id: "path", label: "The path" },
-  { id: "film", label: "In motion" },
-  { id: "desk", label: "Enquire" },
+  { to: "/", label: "Home" },
+  { to: "/about", label: "The house" },
+  { to: "/products", label: "Products" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/contact", label: "Contact us" },
 ];
 
 export const ribbon = [
