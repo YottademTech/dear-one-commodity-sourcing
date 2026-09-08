@@ -15,6 +15,9 @@ export default function Home() {
           loop
           playsInline
           poster="/media/images/img_10_cashew_clean.jpg"
+          onVolumeChange={(event) => {
+            event.currentTarget.muted = true;
+          }}
         >
           <source src="/media/videos/vid_06_cashew_nuts.mp4" type="video/mp4" />
         </video>

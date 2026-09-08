@@ -63,7 +63,17 @@ export default function Gallery() {
           <button className="absolute right-5 top-5 text-ivory" onClick={() => setFilm(null)} aria-label="Close film">
             <X />
           </button>
-          <video className="max-h-[80vh] w-full max-w-4xl rounded-3xl" controls autoPlay src={film.src} />
+          <video
+            className="max-h-[80vh] w-full max-w-4xl rounded-3xl"
+            controls
+            autoPlay
+            muted
+            playsInline
+            src={film.src}
+            onVolumeChange={(event) => {
+              event.currentTarget.muted = true;
+            }}
+          />
         </div>
       )}
     </main>
