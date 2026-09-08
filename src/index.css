@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", sans-serif;
+  --color-forest: #1a5c1a;
+  --color-canopy: #134816;
+  --color-deep: #0c2e10;
+  --color-gold: #c89b0f;
+  --color-gold-soft: #e4c56a;
+  --color-ivory: #f6f1e6;
+  --color-paper: #fbf8f2;
+  --color-ink: #172116;
+  --color-mist: #e7efe4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f6f1e6;
+  color: #172116;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #1a5c1a;
+  color: #f6f1e6;
+}
+
+.grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.6px, transparent 0.7px);
+  background-size: 3px 3px;
+}
+
+.ribbon-track {
+  animation: drift 42s linear infinite;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.rise {
+  animation: rise 0.9s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-veil {
+  background:
+    linear-gradient(180deg, rgba(12, 46, 16, 0.28) 0%, rgba(12, 46, 16, 0.18) 38%, rgba(12, 46, 16, 0.78) 100%),
+    linear-gradient(90deg, rgba(12, 46, 16, 0.55), transparent 58%);
+}
+
+.gold-line {
+  background: linear-gradient(90deg, #c89b0f, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .ribbon-track,
+  .rise {
+    animation: none;
+  }
+}
