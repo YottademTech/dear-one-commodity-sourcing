@@ -13,7 +13,7 @@ export const house = {
 
 export const nav = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "The house" },
+  { to: "/about", label: "About" },
   { to: "/products", label: "Products" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact us" },
