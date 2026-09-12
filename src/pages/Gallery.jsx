@@ -8,7 +8,7 @@ export default function Gallery() {
   const [film, setFilm] = useState(null);
 
   return (
-    <main className="bg-ivory pt-28">
+    <main className="bg-ivory pt-32">
       <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8 lg:pb-28">
         <PageIntro
           eyebrow="Gallery"

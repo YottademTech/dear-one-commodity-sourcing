@@ -27,12 +27,12 @@ export default function Shell({ children }) {
           solid ? "bg-deep/92 shadow-lg shadow-deep/20 backdrop-blur" : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8 md:py-4">
           <Link to="/" className="min-w-0 shrink-0">
             <img
               src={company.logo}
               alt={company.name}
-              className="h-12 w-auto rounded-xl bg-white object-contain p-1.5 shadow-sm sm:h-14"
+              className="h-16 w-auto rounded-2xl bg-white object-contain p-1 shadow-md sm:h-20 md:h-[5.25rem]"
             />
           </Link>
           <nav className="hidden min-w-0 items-center gap-4 lg:flex xl:gap-8">
@@ -74,7 +74,7 @@ export default function Shell({ children }) {
             <img
               src={company.logo}
               alt={company.name}
-              className="h-12 w-auto rounded-xl bg-white object-contain p-1.5"
+              className="h-16 w-auto rounded-2xl bg-white object-contain p-1 sm:h-20"
             />
             <button onClick={() => setOpen(false)} aria-label="Close menu">
               <CloseCircle className="size-6" weight="Linear" />
@@ -104,7 +104,7 @@ export default function Shell({ children }) {
             <img
               src={company.logo}
               alt={company.name}
-              className="h-16 w-auto rounded-xl bg-white object-contain p-2"
+              className="h-20 w-auto rounded-2xl bg-white object-contain p-1.5 shadow-md sm:h-24"
             />
             <p className="mt-3 max-w-full text-base text-ivory/60">{company.name}</p>
           </div>

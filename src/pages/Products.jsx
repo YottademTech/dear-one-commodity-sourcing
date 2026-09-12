@@ -14,7 +14,7 @@ export default function Products() {
   );
 
   return (
-    <main className="bg-ivory pt-28">
+    <main className="bg-ivory pt-32">
       <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8 lg:pb-28">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <PageIntro
