@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { ArrowRight, ArrowUpRight, Clock3, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, ClockCircle, Letter, MapPoint, Phone, SquareArrowRightUp } from "@solar-icons/react";
 import { house } from "../content.js";
 
 const ways = [
   {
-    icon: MapPin,
+    icon: MapPoint,
     label: "The house",
     title: house.place,
     text: house.name,
@@ -21,7 +21,7 @@ const ways = [
     action: "Call now",
   },
   {
-    icon: Mail,
+    icon: Letter,
     label: "Write",
     title: house.email,
     text: "Replies go out on business days.",
@@ -65,7 +65,7 @@ export default function Contact() {
         <div className="grid gap-5 md:grid-cols-3">
           {ways.map((item) => (
             <article key={item.label} className="rounded-[1.8rem] bg-paper p-6 shadow-sm shadow-forest/5">
-              <item.icon className="text-gold" size={22} />
+              <item.icon className="size-[22px] text-gold" weight="Linear" />
               <p className="mt-5 text-base uppercase tracking-[0.18em] text-forest">{item.label}</p>
               <h2 className="mt-2 break-words font-display text-3xl leading-tight text-deep">{item.title}</h2>
               <p className="mt-3 text-lg leading-relaxed text-ink/75">{item.text}</p>
@@ -76,7 +76,7 @@ export default function Contact() {
                 className="mt-5 inline-flex items-center gap-2 text-lg text-forest hover:underline"
               >
                 {item.action}
-                <ArrowUpRight size={16} />
+                <SquareArrowRightUp className="size-4" weight="Linear" />
               </a>
             </article>
           ))}
@@ -92,14 +92,14 @@ export default function Contact() {
               A short note is enough. Crop, grade, volume, and the port you prefer. We reply with what can move, and what must wait.
             </p>
             <p className="mt-6 inline-flex items-center gap-2 text-lg text-ink/70">
-              <Clock3 className="text-gold" size={18} /> Replies on business days
+              <ClockCircle className="size-[18px] text-gold" weight="Linear" /> Replies on business days
             </p>
             <a
               href={house.whatsapp}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-medium text-deep transition hover:bg-gold-soft"
             >
               WhatsApp the desk
-              <ArrowUpRight size={16} />
+              <SquareArrowRightUp className="size-4" weight="Linear" />
             </a>
           </div>
 
@@ -141,7 +141,7 @@ export default function Contact() {
             </label>
             <button className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 text-base text-ivory transition hover:bg-canopy">
               Send the message
-              <ArrowRight size={16} />
+              <ArrowRight className="size-4" weight="Linear" />
             </button>
             {sent && (
               <p className="mt-4 text-lg text-forest">

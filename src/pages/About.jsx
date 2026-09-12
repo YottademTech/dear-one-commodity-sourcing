@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, ScrollText, Sprout } from "lucide-react";
+import { ArrowRight, ClipboardText, Leaf, MapPoint } from "@solar-icons/react";
 import { house } from "../content.js";
 
 const facts = [
@@ -64,7 +64,7 @@ export default function About() {
             className="h-80 w-full rounded-[2rem] object-cover md:h-[28rem]"
           />
           <div>
-            <Sprout className="text-gold" size={22} />
+            <Leaf className="size-[22px] text-gold" weight="Linear" />
             <p className="mt-5 text-base uppercase tracking-[0.22em] text-gold-soft">The work</p>
             <h2 className="mt-4 font-display text-4xl leading-none sm:text-5xl">
               Seeds and cereals, offered with a trader’s care.
@@ -81,7 +81,7 @@ export default function About() {
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:px-8 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-5">
-          <MapPin className="text-gold" size={22} />
+          <MapPoint className="size-[22px] text-gold" weight="Linear" />
           <p className="mt-5 text-base uppercase tracking-[0.22em] text-forest">The address</p>
           <h2 className="mt-4 font-display text-4xl leading-none text-deep sm:text-5xl">
             Kokrobite, near the ocean hill.
@@ -108,7 +108,7 @@ export default function About() {
             className="mt-8 inline-flex items-center gap-2 text-lg text-forest hover:underline"
           >
             Find the house on the map
-            <ArrowRight size={16} />
+            <ArrowRight className="size-4" weight="Linear" />
           </a>
         </div>
       </section>
@@ -116,7 +116,7 @@ export default function About() {
       <section className="bg-forest text-ivory">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-16 md:flex-row md:items-end md:justify-between md:px-8 lg:py-20">
           <div className="max-w-2xl">
-            <ScrollText className="text-gold" size={22} />
+            <ClipboardText className="size-[22px] text-gold" weight="Linear" />
             <p className="mt-5 text-base uppercase tracking-[0.22em] text-gold-soft">The certificate</p>
             <h2 className="mt-4 font-display text-4xl leading-none sm:text-5xl">
               A name held on the public register, and kept with private care.
@@ -130,7 +130,7 @@ export default function About() {
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold px-6 py-3 text-base font-medium text-deep transition hover:bg-gold-soft"
           >
             Write to the house
-            <ArrowRight size={16} />
+            <ArrowRight className="size-4" weight="Linear" />
           </Link>
         </div>
       </section>

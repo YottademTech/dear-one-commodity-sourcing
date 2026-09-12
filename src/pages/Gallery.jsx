@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Play, X } from "lucide-react";
+import { CloseCircle, Play } from "@solar-icons/react";
 import { films, gallery } from "../content.js";
 import { PageIntro } from "../components/Shell.jsx";
 
@@ -25,9 +25,9 @@ export default function Gallery() {
             >
               <img src={item.poster} alt="" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-deep/35" />
-              <span className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-gold text-deep">
-                <Play size={16} fill="currentColor" />
-              </span>
+<span className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-gold text-deep">
+                  <Play className="size-4" weight="Bold" />
+                </span>
               <span className="absolute bottom-4 left-4 right-4 font-display text-3xl text-ivory">{item.title}</span>
             </button>
           ))}
@@ -49,7 +49,7 @@ export default function Gallery() {
       {shot && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-deep/90 p-4" onClick={() => setShot(null)}>
           <button className="absolute right-5 top-5 text-ivory" aria-label="Close image">
-            <X />
+            <CloseCircle className="size-6" weight="Linear" />
           </button>
           <figure className="max-h-[88vh] max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <img src={shot.src} alt={shot.label} className="max-h-[80vh] w-full rounded-3xl object-contain" />
@@ -61,7 +61,7 @@ export default function Gallery() {
       {film && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-deep/95 p-4">
           <button className="absolute right-5 top-5 text-ivory" onClick={() => setFilm(null)} aria-label="Close film">
-            <X />
+            <CloseCircle className="size-6" weight="Linear" />
           </button>
           <video
             className="max-h-[80vh] w-full max-w-4xl rounded-3xl"

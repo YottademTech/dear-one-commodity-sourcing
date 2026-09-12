@@ -9,6 +9,7 @@ export const house = {
   email: "test@mail.com",
   mapEmbed: "https://maps.google.com/maps?q=Kokrobite%2C%20Ghana&z=14&output=embed",
   mapLink: "https://www.google.com/maps/search/?api=1&query=Kokrobite%2C%20Ghana",
+  logo: "/media/brand/logo.png",
 };
 
 export const nav = [
@@ -46,7 +47,83 @@ export const pillars = [
   },
   {
     title: "Quiet discretion",
-    text: "A house led by a Minister of State treats each contract with public care and private restraint.",
+    text: "A named house treats each contract with public care and private restraint.",
+  },
+];
+
+export const stats = [
+  { value: "16+", label: "Crops in the offer" },
+  { value: "3", label: "Market regions served" },
+  { value: "100%", label: "Ghanaian origin" },
+  { value: "2022", label: "House registered" },
+];
+
+export const industries = [
+  {
+    title: "Pharmaceutical & research",
+    text: "Herbal seed and botanical lots for buyers who need origin they can verify.",
+  },
+  {
+    title: "Nutraceutical & wellness",
+    text: "Griffonia, hibiscus, ginger, and related crops for supplement and herbal lines.",
+  },
+  {
+    title: "Food & beverage",
+    text: "Sesame, cashew, maize, soya, coffee, and spice for processors and specialty food.",
+  },
+  {
+    title: "Cosmetics & personal care",
+    text: "Shea butter, cocoa, and plant materials for formulation and care brands.",
+  },
+  {
+    title: "Agro trading desks",
+    text: "Tree crops and cereals for buyers who want a calm Ghana counterpart.",
+  },
+  {
+    title: "Custom sourcing",
+    text: "Named grades and seasonal windows arranged when the land can honestly supply them.",
+  },
+];
+
+export const advantages = [
+  {
+    title: "Direct Ghana presence",
+    text: "The desk sits in Kokrobite. Lots are seen before they are promised.",
+  },
+  {
+    title: "Grade before promise",
+    text: "Colour, moisture, and cleanliness are read. Nothing leaves on rumour.",
+  },
+  {
+    title: "Export paperwork ready",
+    text: "Commercial papers, packing lists, and the certificates a shipment needs are prepared with care.",
+  },
+  {
+    title: "Asia, America, Europe",
+    text: "We provide our services to the Asian, American, and European market.",
+  },
+  {
+    title: "One lasting desk",
+    text: "The same hand answers the brief, the sample, and the shipment. Continuity, not theatre.",
+  },
+  {
+    title: "Broader than botanicals alone",
+    text: "Herbal seed, tree crops, and agro produce under one roof, when the season allows.",
+  },
+];
+
+export const markets = [
+  {
+    region: "Asia",
+    note: "Pharmaceutical, nutraceutical, and food buyers seeking West African origin.",
+  },
+  {
+    region: "America",
+    note: "Wellness, food, and specialty trade desks that want a named Ghana house.",
+  },
+  {
+    region: "Europe",
+    note: "Processors and formulators who prefer calm documentation and clear grade.",
   },
 ];
 
@@ -176,23 +253,33 @@ export const also = [
 export const steps = [
   {
     n: "01",
-    title: "A quiet brief",
-    text: "You name the crop, the grade, and the window. We answer with what the season can truly give.",
+    title: "Enquiry",
+    text: "Name the crop, the grade, the volume, and the window. The desk replies with what the season can give.",
   },
   {
     n: "02",
-    title: "Origin and sample",
-    text: "Stock is seen, smelled, and sampled before any promise is made in writing.",
+    title: "Quotation",
+    text: "A clear offer follows: specification, available quantity, packing, and the terms that fit the lot.",
   },
   {
     n: "03",
-    title: "Pack and passage",
-    text: "Approved lots are sacked, cartoned, or held in store, then moved toward the port you choose.",
+    title: "Sample",
+    text: "Where needed, a sample leaves first so the buyer can read the grain before the full order.",
   },
   {
     n: "04",
-    title: "A lasting desk",
-    text: "After the first shipment, the same desk stays with the account. No theatre. Just continuity.",
+    title: "Inspection",
+    text: "Approved stock is sorted, checked, and held. Only what can be stood behind is packed.",
+  },
+  {
+    n: "05",
+    title: "Documents",
+    text: "Invoices, packing lists, and the certificates for passage are prepared for the route you choose.",
+  },
+  {
+    n: "06",
+    title: "Shipment",
+    text: "The lot moves by sea or air toward Asia, America, or Europe, with the same desk still on the account.",
   },
 ];
 

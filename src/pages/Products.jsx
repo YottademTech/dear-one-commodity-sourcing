@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { X } from "lucide-react";
+import { CloseCircle } from "@solar-icons/react";
 import { also, products } from "../content.js";
 import { PageIntro } from "../components/Shell.jsx";
 
@@ -71,7 +71,7 @@ export default function Products() {
       {shot && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-deep/90 p-4" onClick={() => setShot(null)}>
           <button className="absolute right-5 top-5 text-ivory" aria-label="Close image">
-            <X />
+            <CloseCircle className="size-6" weight="Linear" />
           </button>
           <figure className="max-h-[88vh] max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <img src={shot.src} alt={shot.label} className="max-h-[80vh] w-full rounded-3xl object-contain" />

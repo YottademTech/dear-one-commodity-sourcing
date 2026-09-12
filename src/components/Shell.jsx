@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { CloseCircle, HamburgerMenu, SquareArrowRightUp } from "@solar-icons/react";
 import { house, nav } from "../content.js";
 
 export default function Shell({ children }) {
@@ -27,12 +27,13 @@ export default function Shell({ children }) {
           solid ? "bg-deep/92 shadow-lg shadow-deep/20 backdrop-blur" : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 md:px-8">
-          <Link to="/" className="min-w-0 text-left">
-            <span className="block font-display text-2xl leading-none text-ivory">Dear One</span>
-            <span className="mt-1 block truncate text-sm uppercase tracking-[0.16em] text-gold sm:tracking-[0.22em]">
-              Commodity house
-            </span>
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
+          <Link to="/" className="min-w-0 shrink-0">
+            <img
+              src={house.logo}
+              alt={house.name}
+              className="h-12 w-auto rounded-xl bg-white object-contain p-1.5 shadow-sm sm:h-14"
+            />
           </Link>
           <nav className="hidden min-w-0 items-center gap-4 lg:flex xl:gap-8">
             {nav.map((item) => (
@@ -53,15 +54,15 @@ export default function Shell({ children }) {
               href={house.whatsapp}
               className="hidden items-center gap-2 rounded-full bg-gold px-4 py-2 text-base font-medium text-deep transition hover:bg-gold-soft md:inline-flex"
             >
-              Speak with the desk
-              <ArrowUpRight size={16} />
+              Request a quote
+              <SquareArrowRightUp className="size-4" weight="Linear" />
             </a>
             <button
               className="grid h-11 w-11 place-items-center rounded-full border border-ivory/20 text-ivory lg:hidden"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
             >
-              <Menu size={18} />
+              <HamburgerMenu className="size-[18px]" weight="Linear" />
             </button>
           </div>
         </div>
@@ -70,9 +71,13 @@ export default function Shell({ children }) {
       {open && (
         <div className="fixed inset-0 z-50 bg-deep text-ivory">
           <div className="flex items-center justify-between px-5 py-5">
-            <span className="font-display text-3xl">Dear One</span>
+            <img
+              src={house.logo}
+              alt={house.name}
+              className="h-12 w-auto rounded-xl bg-white object-contain p-1.5"
+            />
             <button onClick={() => setOpen(false)} aria-label="Close menu">
-              <X />
+              <CloseCircle className="size-6" weight="Linear" />
             </button>
           </div>
           <div className="flex flex-col gap-6 px-6 pt-10">
@@ -96,8 +101,12 @@ export default function Shell({ children }) {
       <footer className="bg-deep px-5 py-10 text-ivory md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-display text-4xl">Dear One</p>
-            <p className="mt-2 max-w-full text-base text-ivory/60">{house.name}</p>
+            <img
+              src={house.logo}
+              alt={house.name}
+              className="h-16 w-auto rounded-xl bg-white object-contain p-2"
+            />
+            <p className="mt-3 max-w-full text-base text-ivory/60">{house.name}</p>
           </div>
           <nav className="flex flex-wrap gap-5 text-base text-gold-soft">
             {nav.map((item) => (
@@ -115,7 +124,7 @@ export default function Shell({ children }) {
         className="fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-3 text-base font-medium text-deep shadow-lg shadow-deep/20"
       >
         WhatsApp
-        <ArrowUpRight size={16} />
+        <SquareArrowRightUp className="size-4" weight="Linear" />
       </a>
     </div>
   );

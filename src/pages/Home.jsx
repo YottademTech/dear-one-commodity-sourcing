@@ -1,9 +1,39 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, ShieldCheck, Ship, Sprout } from "lucide-react";
-import { gallery, house, pillars, products, ribbon } from "../content.js";
+import {
+  ArrowRight,
+  Buildings2,
+  ClipboardText,
+  Delivery,
+  Global,
+  Leaf,
+  ShieldCheck,
+} from "@solar-icons/react";
+import {
+  advantages,
+  gallery,
+  house,
+  industries,
+  markets,
+  pillars,
+  products,
+  ribbon,
+  stats,
+  steps,
+} from "../content.js";
+
+const featuredNames = [
+  "Voacanga Africana",
+  "Griffonia seed",
+  "Grain of paradise",
+  "Hibiscus",
+  "Raw cashew nuts",
+  "Shea butter",
+];
 
 export default function Home() {
-  const featured = products.slice(0, 3);
+  const featured = featuredNames
+    .map((name) => products.find((item) => item.name === name))
+    .filter(Boolean);
 
   return (
     <main>
@@ -24,33 +54,48 @@ export default function Home() {
         <div className="hero-veil absolute inset-0" />
         <div className="grain pointer-events-none absolute inset-0 opacity-40" />
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8">
-          <p className="rise text-base uppercase tracking-[0.22em] text-gold-soft">Kokrobite · Ghana</p>
-          <h1 className="rise mt-5 max-w-full font-display text-4xl leading-[0.95] sm:text-5xl md:text-7xl">
-            A calm house for the crops the world still seeks.
+          <p className="rise text-base uppercase tracking-[0.22em] text-gold-soft">
+            Ghana · Asia · America · Europe
+          </p>
+          <h1 className="rise mt-5 max-w-4xl font-display text-4xl leading-[0.95] font-semibold tracking-[-0.02em] sm:text-5xl md:text-7xl">
+            Premium Ghanaian seeds, tree crops, and agro produce for the world.
           </h1>
           <p className="rise mt-6 max-w-2xl text-xl font-light leading-relaxed text-ivory/90 md:text-2xl">
-            {house.name} gathers herbal seed, tree crops, and agro produce with the patience of a
-            private desk and the standing of public office.
+            {house.name} sources herbal seed, tree crops, and cereals from known hands in Ghana,
+            then prepares them for buyers across Asia, America, and Europe.
           </p>
           <div className="rise mt-8 flex flex-wrap gap-3">
             <Link
-              to="/products"
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-medium text-deep transition hover:bg-gold-soft"
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-semibold text-deep transition hover:bg-gold-soft"
             >
-              See the products
-              <ArrowRight size={16} />
+              Request a quote
+              <ArrowRight className="size-4" weight="Linear" />
             </Link>
             <Link
-              to="/contact"
+              to="/products"
               className="inline-flex items-center gap-2 rounded-full border border-ivory/30 px-5 py-3 text-base text-ivory transition hover:border-gold hover:text-gold"
             >
-              Contact us
+              Explore products
             </Link>
           </div>
         </div>
       </section>
 
-      <div className="max-w-full overflow-x-clip border-y border-forest/10 bg-forest text-ivory">
+      <div className="border-y border-deep/10 bg-deep text-ivory">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-5 py-10 md:grid-cols-4 md:px-8">
+          {stats.map((item) => (
+            <div key={item.label}>
+              <p className="font-display text-4xl font-semibold tracking-[-0.02em] text-gold-soft md:text-5xl">
+                {item.value}
+              </p>
+              <p className="mt-2 text-base text-ivory/70">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-full overflow-x-clip border-b border-forest/10 bg-forest text-ivory">
         <div className="ribbon-track flex gap-10 whitespace-nowrap py-4">
           {[...ribbon, ...ribbon].map((item, index) => (
             <span key={`${item}-${index}`} className="flex items-center gap-10 text-base tracking-wide">
@@ -63,18 +108,25 @@ export default function Home() {
 
       <section className="mx-auto grid min-w-0 max-w-7xl gap-10 px-5 py-20 md:px-8 lg:grid-cols-12 lg:py-28">
         <div className="lg:col-span-5">
-          <p className="text-base uppercase tracking-[0.22em] text-forest">The house</p>
-          <h2 className="mt-4 max-w-full font-display text-4xl leading-none text-deep sm:text-5xl">Led with public standing. Run as a private craft.</h2>
-          <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-base text-forest hover:underline">
-            Read the house story
-            <ArrowRight size={16} />
+          <p className="text-base uppercase tracking-[0.22em] text-forest">Who we are</p>
+          <h2 className="mt-4 max-w-full font-display text-4xl leading-none font-semibold tracking-[-0.02em] text-deep sm:text-5xl">
+            A named Ghana house for buyers who want origin without noise.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-ink/75">
+            From Kokrobite, Dear One connects farms and gathering points to pharmaceutical,
+            food, wellness, and trade desks abroad. The difference is simple: the lot is seen,
+            graded, and documented before it is promised.
+          </p>
+          <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-base font-semibold text-forest hover:underline">
+            Learn about the house
+            <ArrowRight className="size-4" weight="Linear" />
           </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-3 lg:col-span-7">
           {pillars.map((item) => (
-            <article key={item.title} className="rounded-3xl bg-paper p-5 shadow-sm shadow-forest/5">
-              <Leaf className="text-gold" size={18} />
-              <h3 className="mt-4 font-display text-3xl text-deep">{item.title}</h3>
+            <article key={item.title} className="rounded-3xl bg-paper p-5 shadow-sm shadow-deep/5">
+              <Leaf className="size-[18px] text-forest" weight="Linear" />
+              <h3 className="mt-4 font-display text-2xl font-semibold text-deep">{item.title}</h3>
               <p className="mt-3 text-lg leading-relaxed text-ink/75">{item.text}</p>
             </article>
           ))}
@@ -82,94 +134,136 @@ export default function Home() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-base uppercase tracking-[0.22em] text-forest">Products</p>
-              <h2 className="mt-4 max-w-full font-display text-4xl leading-none text-deep sm:text-5xl">A first look at the offer.</h2>
+        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="text-base uppercase tracking-[0.22em] text-forest">Featured products</p>
+              <h2 className="mt-4 font-display text-4xl leading-none font-semibold tracking-[-0.02em] text-deep sm:text-5xl">
+                Crops the house can speak for.
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-ink/75">
+                Herbal seed, tree crops, and agro produce prepared for export, when the season allows.
+              </p>
             </div>
-            <Link to="/products" className="hidden items-center gap-2 text-base text-forest hover:underline sm:inline-flex">
-              All products
-              <ArrowRight size={16} />
+            <Link to="/products" className="inline-flex items-center gap-2 text-base font-semibold text-forest hover:underline">
+              View all products
+              <ArrowRight className="size-4" weight="Linear" />
             </Link>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((item) => (
-              <Link key={item.name} to="/products" className="group overflow-hidden rounded-[1.8rem] bg-ivory">
-                <img src={item.image} alt={item.alt} className="h-64 w-full object-cover transition duration-700 group-hover:scale-105" />
+              <Link
+                key={item.name}
+                to="/products"
+                className="group overflow-hidden rounded-[1.8rem] bg-ivory shadow-sm shadow-deep/5"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-ivory/95 px-3 py-1 text-sm uppercase tracking-[0.14em] text-forest">
+                    {item.kind}
+                  </span>
+                </div>
                 <div className="p-5">
-                  <p className="text-base uppercase tracking-[0.16em] text-forest">{item.kind}</p>
-                  <h3 className="mt-2 font-display text-3xl text-deep">{item.name}</h3>
+                  <h3 className="font-display text-3xl font-semibold text-deep">{item.name}</h3>
+                  <p className="mt-2 text-lg leading-relaxed text-ink/75">{item.note}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-base font-semibold text-forest">
+                    View details
+                    <ArrowRight className="size-4" weight="Linear" />
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
-          <Link to="/products" className="mt-8 inline-flex items-center gap-2 text-lg text-forest hover:underline sm:hidden">
-            All products
-            <ArrowRight size={16} />
-          </Link>
         </div>
       </section>
 
       <section className="bg-deep text-ivory">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
-          <p className="text-base uppercase tracking-[0.22em] text-gold-soft">The standard</p>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none sm:text-5xl">
-            What a buyer can expect before a lot is named.
+          <p className="text-base uppercase tracking-[0.22em] text-gold-soft">Industries we serve</p>
+          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none font-semibold tracking-[-0.02em] sm:text-5xl">
+            One offer, many desks.
           </h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                icon: Sprout,
-                title: "Known origin",
-                text: "Each offer begins with a farm, a gathering point, or a hand the house already trusts.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "Seen before promised",
-                text: "Moisture, colour, and cleanliness are read. Nothing is offered on rumour.",
-              },
-              {
-                icon: Ship,
-                title: "Held for passage",
-                text: "Approved stock is sacked or cartoned, then kept until the route is clear.",
-              },
-            ].map((item) => (
-              <article key={item.title} className="rounded-[1.8rem] border border-ivory/10 bg-canopy/40 p-6">
-                <item.icon className="text-gold" size={22} />
-                <h3 className="mt-5 font-display text-3xl">{item.title}</h3>
-                <p className="mt-3 text-lg leading-relaxed text-ivory/80">{item.text}</p>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((item) => (
+              <article key={item.title} className="rounded-[1.8rem] border border-ivory/10 bg-white/5 p-6">
+                <Buildings2 className="size-[22px] text-gold" weight="Linear" />
+                <h3 className="mt-5 font-display text-2xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-lg leading-relaxed text-ivory/75">{item.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-20 md:px-8 lg:grid-cols-2 lg:py-28">
-        <div className="grid grid-cols-2 gap-4">
-          <img
-            src="/media/images/img_12_voacanga_fruit.jpg"
-            alt="Voacanga fruit on the tree"
-            className="h-56 w-full rounded-[1.6rem] object-cover sm:h-72"
-          />
-          <img
-            src="/media/images/img_18_export_cartons.jpg"
-            alt="Cartons packed and ready to move"
-            className="mt-8 h-56 w-full rounded-[1.6rem] object-cover sm:h-72"
-          />
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
+        <p className="text-base uppercase tracking-[0.22em] text-forest">Why Dear One</p>
+        <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none font-semibold tracking-[-0.02em] text-deep sm:text-5xl">
+          What serious buyers need besides a good crop.
+        </h2>
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {advantages.map((item, index) => {
+            const Icon = [ShieldCheck, Leaf, ClipboardText, Global, Delivery, Buildings2][index];
+            return (
+              <article key={item.title} className="rounded-[1.8rem] bg-paper p-6 shadow-sm shadow-deep/5">
+                <Icon className="size-[22px] text-forest" weight="Linear" />
+                <h3 className="mt-5 font-display text-2xl font-semibold text-deep">{item.title}</h3>
+                <p className="mt-3 text-lg leading-relaxed text-ink/75">{item.text}</p>
+              </article>
+            );
+          })}
         </div>
-        <div>
-          <p className="text-base uppercase tracking-[0.22em] text-forest">From tree to store</p>
-          <h2 className="mt-4 font-display text-4xl leading-none text-deep sm:text-5xl">
-            The lot is quiet work, from the branch to the sack.
+      </section>
+
+      <section className="bg-forest text-ivory">
+        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
+          <p className="text-base uppercase tracking-[0.22em] text-gold-soft">How it works</p>
+          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none font-semibold tracking-[-0.02em] sm:text-5xl">
+            From enquiry to delivery, without theatre.
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-ink/75">
-            Harvest, drying, and packing stay close to the crop. The house does not dress a parcel to look larger than it is. You see the same grain in the field that you receive at the port.
-          </p>
-          <Link to="/about" className="mt-8 inline-flex items-center gap-2 text-lg text-forest hover:underline">
-            Follow the path
-            <ArrowRight size={16} />
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {steps.map((item) => (
+              <article key={item.n} className="rounded-[1.8rem] border border-ivory/10 bg-canopy/40 p-6">
+                <span className="font-display text-4xl font-semibold text-gold">{item.n}</span>
+                <h3 className="mt-4 font-display text-2xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-lg leading-relaxed text-ivory/80">{item.text}</p>
+              </article>
+            ))}
+          </div>
+          <Link
+            to="/contact"
+            className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-semibold text-deep transition hover:bg-gold-soft"
+          >
+            Start with an enquiry
+            <ArrowRight className="size-4" weight="Linear" />
           </Link>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
+        <div className="grid items-end gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="text-base uppercase tracking-[0.22em] text-forest">Global markets</p>
+            <h2 className="mt-4 font-display text-4xl leading-none font-semibold tracking-[-0.02em] text-deep sm:text-5xl">
+              We serve Asia, America, and Europe.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-ink/75">
+              The house is Ghanaian. The desks we answer sit across three market regions,
+              with the same care for grade, papers, and timing.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3 lg:col-span-7">
+            {markets.map((item) => (
+              <article key={item.region} className="rounded-[1.8rem] border border-deep/10 bg-paper p-6">
+                <Global className="size-[22px] text-forest" weight="Linear" />
+                <h3 className="mt-5 font-display text-3xl font-semibold text-deep">{item.region}</h3>
+                <p className="mt-3 text-lg leading-relaxed text-ink/75">{item.note}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -177,14 +271,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="text-base uppercase tracking-[0.22em] text-forest">The gallery</p>
-              <h2 className="mt-4 max-w-2xl font-display text-4xl leading-none text-deep sm:text-5xl">
-                Still frames from the yard.
+              <p className="text-base uppercase tracking-[0.22em] text-forest">From the yard</p>
+              <h2 className="mt-4 max-w-2xl font-display text-4xl leading-none font-semibold tracking-[-0.02em] text-deep sm:text-5xl">
+                Still frames from the work.
               </h2>
             </div>
-            <Link to="/gallery" className="inline-flex items-center gap-2 text-lg text-forest hover:underline">
+            <Link to="/gallery" className="inline-flex items-center gap-2 text-lg font-semibold text-forest hover:underline">
               Open the gallery
-              <ArrowRight size={16} />
+              <ArrowRight className="size-4" weight="Linear" />
             </Link>
           </div>
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -197,6 +291,40 @@ export default function Home() {
                 />
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-deep text-ivory">
+        <img
+          src="/media/images/img_13_voacanga_harvest.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
+        />
+        <div className="hero-veil absolute inset-0" />
+        <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
+          <p className="text-base uppercase tracking-[0.22em] text-gold-soft">Start today</p>
+          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none font-semibold tracking-[-0.02em] sm:text-5xl md:text-6xl">
+            Ready to source from Ghana with a calm, lasting desk?
+          </h2>
+          <p className="mt-6 max-w-2xl text-xl font-light leading-relaxed text-ivory/85">
+            Send the crop, the grade, and the window. The house replies with what can move,
+            and what must wait.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-semibold text-deep transition hover:bg-gold-soft"
+            >
+              Request a quote
+              <ArrowRight className="size-4" weight="Linear" />
+            </Link>
+            <a
+              href={house.whatsapp}
+              className="inline-flex items-center gap-2 rounded-full border border-ivory/30 px-5 py-3 text-base text-ivory transition hover:border-gold hover:text-gold"
+            >
+              WhatsApp the desk
+            </a>
           </div>
         </div>
       </section>
