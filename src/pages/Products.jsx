@@ -19,8 +19,8 @@ export default function Products() {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <PageIntro
             eyebrow="Products"
-            title="Crops the house can speak for."
-            text="Each lot is named, seen, and offered only when the house can stand behind it."
+            title="Crops we can stand behind."
+            text="Each lot is named, seen, and offered only when we can stand behind it."
           />
           <div className="flex flex-wrap gap-2">
             {filters.map((item) => (

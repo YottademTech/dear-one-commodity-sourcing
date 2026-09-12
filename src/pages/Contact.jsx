@@ -1,31 +1,31 @@
 import { useState } from "react";
 import { ArrowRight, ClockCircle, Letter, MapPoint, Phone, SquareArrowRightUp } from "@solar-icons/react";
-import { house } from "../content.js";
+import { company } from "../content.js";
 
 const ways = [
   {
     icon: MapPoint,
-    label: "The house",
-    title: house.place,
-    text: house.name,
-    href: house.mapLink,
+    label: "Office",
+    title: company.place,
+    text: company.name,
+    href: company.mapLink,
     action: "Open in Google Maps",
     external: true,
   },
   {
     icon: Phone,
     label: "Speak",
-    title: house.phone,
-    text: "Call the desk, or write on WhatsApp.",
-    href: house.phoneHref,
+    title: company.phone,
+    text: "Call us, or write on WhatsApp.",
+    href: company.phoneHref,
     action: "Call now",
   },
   {
     icon: Letter,
     label: "Write",
-    title: house.email,
+    title: company.email,
     text: "Replies go out on business days.",
-    href: `mailto:${house.email}`,
+    href: `mailto:${company.email}`,
     action: "Send an email",
   },
 ];
@@ -54,7 +54,7 @@ export default function Contact() {
       <div className="w-full max-w-full overflow-hidden">
         <iframe
           title="Dear One Commodity Sourcing Enterprise in Kokrobite, Ghana"
-          src={house.mapEmbed}
+          src={company.mapEmbed}
           className="block h-[28rem] w-full max-w-full border-0 md:h-[36rem]"
           referrerPolicy="no-referrer-when-downgrade"
           allowFullScreen
@@ -95,10 +95,10 @@ export default function Contact() {
               <ClockCircle className="size-[18px] text-gold" weight="Linear" /> Replies on business days
             </p>
             <a
-              href={house.whatsapp}
+              href={company.whatsapp}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-base font-medium text-deep transition hover:bg-gold-soft"
             >
-              WhatsApp the desk
+              WhatsApp us
               <SquareArrowRightUp className="size-4" weight="Linear" />
             </a>
           </div>
@@ -118,7 +118,7 @@ export default function Contact() {
                 "",
                 data.get("note"),
               ].join("\n");
-              window.location.href = `mailto:${house.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
               setSent(true);
             }}
           >
@@ -145,7 +145,7 @@ export default function Contact() {
             </button>
             {sent && (
               <p className="mt-4 text-lg text-forest">
-                Received. Your mail is ready to leave, and the desk will answer from Kokrobite.
+                Received. Your mail is ready to leave, and our team will answer from Kokrobite.
               </p>
             )}
           </form>

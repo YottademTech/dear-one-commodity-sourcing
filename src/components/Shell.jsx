@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { CloseCircle, HamburgerMenu, SquareArrowRightUp } from "@solar-icons/react";
-import { house, nav } from "../content.js";
+import { company, nav } from "../content.js";
 
 export default function Shell({ children }) {
   const { pathname } = useLocation();
@@ -30,8 +30,8 @@ export default function Shell({ children }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
           <Link to="/" className="min-w-0 shrink-0">
             <img
-              src={house.logo}
-              alt={house.name}
+              src={company.logo}
+              alt={company.name}
               className="h-12 w-auto rounded-xl bg-white object-contain p-1.5 shadow-sm sm:h-14"
             />
           </Link>
@@ -51,7 +51,7 @@ export default function Shell({ children }) {
           </nav>
           <div className="flex items-center gap-3">
             <a
-              href={house.whatsapp}
+              href={company.whatsapp}
               className="hidden items-center gap-2 rounded-full bg-gold px-4 py-2 text-base font-medium text-deep transition hover:bg-gold-soft md:inline-flex"
             >
               Request a quote
@@ -72,8 +72,8 @@ export default function Shell({ children }) {
         <div className="fixed inset-0 z-50 bg-deep text-ivory">
           <div className="flex items-center justify-between px-5 py-5">
             <img
-              src={house.logo}
-              alt={house.name}
+              src={company.logo}
+              alt={company.name}
               className="h-12 w-auto rounded-xl bg-white object-contain p-1.5"
             />
             <button onClick={() => setOpen(false)} aria-label="Close menu">
@@ -102,11 +102,11 @@ export default function Shell({ children }) {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <img
-              src={house.logo}
-              alt={house.name}
+              src={company.logo}
+              alt={company.name}
               className="h-16 w-auto rounded-xl bg-white object-contain p-2"
             />
-            <p className="mt-3 max-w-full text-base text-ivory/60">{house.name}</p>
+            <p className="mt-3 max-w-full text-base text-ivory/60">{company.name}</p>
           </div>
           <nav className="flex flex-wrap gap-5 text-base text-gold-soft">
             {nav.map((item) => (
@@ -120,7 +120,7 @@ export default function Shell({ children }) {
       </footer>
 
       <a
-        href={house.whatsapp}
+        href={company.whatsapp}
         className="fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-3 text-base font-medium text-deep shadow-lg shadow-deep/20"
       >
         WhatsApp

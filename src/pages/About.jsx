@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ClipboardText, Leaf, MapPoint } from "@solar-icons/react";
-import { house } from "../content.js";
+import { company } from "../content.js";
 
 const facts = [
   { label: "Business name", value: "Dear One Commodity Sourcing Enterprise" },
@@ -23,9 +23,9 @@ export default function About() {
         <div className="hero-veil absolute inset-0" />
         <div className="grain pointer-events-none absolute inset-0 opacity-40" />
         <div className="relative mx-auto flex min-h-[28rem] max-w-7xl flex-col justify-end px-5 pb-14 pt-32 md:min-h-[34rem] md:px-8 md:pb-16">
-          <p className="text-base uppercase tracking-[0.22em] text-gold-soft">The house</p>
+          <p className="text-base uppercase tracking-[0.22em] text-gold-soft">About us</p>
           <h1 className="mt-5 max-w-4xl font-display text-4xl leading-[1.05] text-ivory sm:text-5xl md:text-6xl">
-            A named house, registered in Ghana, and quiet in its purpose.
+            A registered Ghana commodity enterprise, quiet in its purpose.
           </h1>
           <p className="mt-6 max-w-2xl text-xl font-light leading-relaxed text-ivory/90">
             Dear One Commodity Sourcing Enterprise was entered on the register on the 27th day of May 2022, under the Registration of Business Names Act, 1962.
@@ -40,7 +40,7 @@ export default function About() {
             Work started a little before the seal was set.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/80">
-            The house opened its books on 16 May 2022. Eleven days later, the Republic of Ghana recorded the name. The certificate bears registration number BN337650522, and the date the 27th day of May 2022.
+            The enterprise opened its books on 16 May 2022. Eleven days later, the Republic of Ghana recorded the name. The certificate bears registration number BN337650522, and the date the 27th day of May 2022.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-ink/80">
             The calling is simple, and it is written plainly: the sale and supply of seeds and cereals, and the wider discipline of general trading.
@@ -73,7 +73,7 @@ export default function About() {
               The principal activity is the sale and supply of seeds and cereals. Beside that sits general trading, so a buyer may ask for the grain, the nut, or the seed the season can honestly give.
             </p>
             <p className="mt-5 text-lg leading-relaxed text-ivory/80">
-              On the industrial register the house is classed, first, as retail sale of food in specialized stores. That is the public name for a private habit: know the crop, then place it well.
+              On the industrial register the enterprise is classed, first, as retail sale of food in specialized stores. That is the public name for a private habit: know the crop, then place it well.
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function About() {
         </div>
         <div className="rounded-[1.8rem] bg-paper p-6 shadow-sm shadow-forest/5 sm:p-8 lg:col-span-7">
           <dl className="grid gap-6 sm:grid-cols-2">
-            <Detail label="House" value="Unnumbered house, Kokrobite" />
+            <Detail label="Building" value="Unnumbered house, Kokrobite" />
             <Detail label="Street" value="Near LMB Ocean Hill" />
             <Detail label="City" value="Accra" />
             <Detail label="District" value="Ga South" />
@@ -102,12 +102,12 @@ export default function About() {
             <Detail label="Postal" value="P.O. Box AN 1578, Accra North, Greater Accra" />
           </dl>
           <a
-            href={house.mapLink}
+            href={company.mapLink}
             target="_blank"
             rel="noreferrer"
             className="mt-8 inline-flex items-center gap-2 text-lg text-forest hover:underline"
           >
-            Find the house on the map
+            Find us on the map
             <ArrowRight className="size-4" weight="Linear" />
           </a>
         </div>
@@ -129,7 +129,7 @@ export default function About() {
             to="/contact"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold px-6 py-3 text-base font-medium text-deep transition hover:bg-gold-soft"
           >
-            Write to the house
+            Contact us
             <ArrowRight className="size-4" weight="Linear" />
           </Link>
         </div>

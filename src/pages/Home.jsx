@@ -11,7 +11,7 @@ import {
 import {
   advantages,
   gallery,
-  house,
+  company,
   industries,
   markets,
   pillars,
@@ -61,7 +61,7 @@ export default function Home() {
             Premium Ghanaian seeds, tree crops, and agro produce for the world.
           </h1>
           <p className="rise mt-6 max-w-2xl text-xl font-light leading-relaxed text-ivory/90 md:text-2xl">
-            {house.name} sources herbal seed, tree crops, and cereals from known hands in Ghana,
+            {company.name} sources herbal seed, tree crops, and cereals from known hands in Ghana,
             then prepares them for buyers across Asia, America, and Europe.
           </p>
           <div className="rise mt-8 flex flex-wrap gap-3">
@@ -110,15 +110,15 @@ export default function Home() {
         <div className="lg:col-span-5">
           <p className="text-base uppercase tracking-[0.22em] text-forest">Who we are</p>
           <h2 className="mt-4 max-w-full font-display text-4xl leading-none font-semibold tracking-[-0.02em] text-deep sm:text-5xl">
-            A named Ghana house for buyers who want origin without noise.
+            A Ghana commodity enterprise for buyers who want origin without noise.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/75">
             From Kokrobite, Dear One connects farms and gathering points to pharmaceutical,
-            food, wellness, and trade desks abroad. The difference is simple: the lot is seen,
+            food, wellness, and trade partners abroad. The difference is simple: the lot is seen,
             graded, and documented before it is promised.
           </p>
           <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-base font-semibold text-forest hover:underline">
-            Learn about the house
+            Learn about the enterprise
             <ArrowRight className="size-4" weight="Linear" />
           </Link>
         </div>
@@ -139,7 +139,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <p className="text-base uppercase tracking-[0.22em] text-forest">Featured products</p>
               <h2 className="mt-4 font-display text-4xl leading-none font-semibold tracking-[-0.02em] text-deep sm:text-5xl">
-                Crops the house can speak for.
+                Crops we can stand behind.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-ink/75">
                 Herbal seed, tree crops, and agro produce prepared for export, when the season allows.
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
           <p className="text-base uppercase tracking-[0.22em] text-gold-soft">Industries we serve</p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none font-semibold tracking-[-0.02em] sm:text-5xl">
-            One offer, many desks.
+            One offer, many industries.
           </h2>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((item) => (
@@ -251,7 +251,7 @@ export default function Home() {
               We serve Asia, America, and Europe.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-ink/75">
-              The house is Ghanaian. The desks we answer sit across three market regions,
+              Dear One is Ghanaian. The buyers we serve sit across three market regions,
               with the same care for grade, papers, and timing.
             </p>
           </div>
@@ -305,10 +305,10 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 lg:py-28">
           <p className="text-base uppercase tracking-[0.22em] text-gold-soft">Start today</p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl leading-none font-semibold tracking-[-0.02em] sm:text-5xl md:text-6xl">
-            Ready to source from Ghana with a calm, lasting desk?
+            Ready to source from Ghana with a calm, lasting partner?
           </h2>
           <p className="mt-6 max-w-2xl text-xl font-light leading-relaxed text-ivory/85">
-            Send the crop, the grade, and the window. The house replies with what can move,
+            Send the crop, the grade, and the window. Our team replies with what can move,
             and what must wait.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -320,10 +320,10 @@ export default function Home() {
               <ArrowRight className="size-4" weight="Linear" />
             </Link>
             <a
-              href={house.whatsapp}
+              href={company.whatsapp}
               className="inline-flex items-center gap-2 rounded-full border border-ivory/30 px-5 py-3 text-base text-ivory transition hover:border-gold hover:text-gold"
             >
-              WhatsApp the desk
+              WhatsApp us
             </a>
           </div>
         </div>

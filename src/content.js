@@ -1,4 +1,4 @@
-export const house = {
+export const company = {
   name: "Dear One Commodity Sourcing Enterprise",
   short: "Dear One",
   mark: "DOCSE",
@@ -47,7 +47,7 @@ export const pillars = [
   },
   {
     title: "Quiet discretion",
-    text: "A named house treats each contract with public care and private restraint.",
+    text: "A named commodity enterprise treats each contract with public care and private restraint.",
   },
 ];
 
@@ -55,7 +55,7 @@ export const stats = [
   { value: "16+", label: "Crops in the offer" },
   { value: "3", label: "Market regions served" },
   { value: "100%", label: "Ghanaian origin" },
-  { value: "2022", label: "House registered" },
+  { value: "2022", label: "Enterprise registered" },
 ];
 
 export const industries = [
@@ -76,7 +76,7 @@ export const industries = [
     text: "Shea butter, cocoa, and plant materials for formulation and care brands.",
   },
   {
-    title: "Agro trading desks",
+    title: "Agro commodity traders",
     text: "Tree crops and cereals for buyers who want a calm Ghana counterpart.",
   },
   {
@@ -88,7 +88,7 @@ export const industries = [
 export const advantages = [
   {
     title: "Direct Ghana presence",
-    text: "The desk sits in Kokrobite. Lots are seen before they are promised.",
+    text: "Our office sits in Kokrobite. Lots are seen before they are promised.",
   },
   {
     title: "Grade before promise",
@@ -103,8 +103,8 @@ export const advantages = [
     text: "We provide our services to the Asian, American, and European market.",
   },
   {
-    title: "One lasting desk",
-    text: "The same hand answers the brief, the sample, and the shipment. Continuity, not theatre.",
+    title: "One lasting account team",
+    text: "The same team answers the brief, the sample, and the shipment. Continuity, not theatre.",
   },
   {
     title: "Broader than botanicals alone",
@@ -119,7 +119,7 @@ export const markets = [
   },
   {
     region: "America",
-    note: "Wellness, food, and specialty trade desks that want a named Ghana house.",
+    note: "Wellness, food, and specialty traders who want a named Ghana enterprise.",
   },
   {
     region: "Europe",
@@ -254,7 +254,7 @@ export const steps = [
   {
     n: "01",
     title: "Enquiry",
-    text: "Name the crop, the grade, the volume, and the window. The desk replies with what the season can give.",
+    text: "Name the crop, the grade, the volume, and the window. Our team replies with what the season can give.",
   },
   {
     n: "02",
@@ -279,7 +279,7 @@ export const steps = [
   {
     n: "06",
     title: "Shipment",
-    text: "The lot moves by sea or air toward Asia, America, or Europe, with the same desk still on the account.",
+    text: "The lot moves by sea or air toward Asia, America, or Europe, with the same team still on the account.",
   },
 ];
 
