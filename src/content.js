@@ -77,7 +77,7 @@ export const industries = [
   },
   {
     title: "Agro commodity traders",
-    text: "Tree crops and cereals for buyers who want a calm Ghana counterpart.",
+    text: "Cash crops and cereals for buyers who want a calm Ghana counterpart.",
   },
   {
     title: "Custom sourcing",
@@ -108,7 +108,7 @@ export const advantages = [
   },
   {
     title: "Broader than botanicals alone",
-    text: "Herbal seed, tree crops, and agro produce under one roof, when the season allows.",
+    text: "Herbal seed, cash crops, and agro produce under one roof, when the season allows.",
   },
 ];
 
@@ -137,7 +137,7 @@ export const products = [
   },
   {
     name: "Raw cashew nuts",
-    kind: "Tree crop",
+    kind: "Cash Crops",
     note: "In shell cashew, gathered and held for export packing.",
     image: "/media/images/img_04_cashew_hand.jpg",
     alt: "Raw cashew nuts held above a drying yard",
@@ -158,35 +158,35 @@ export const products = [
   },
   {
     name: "Shea nuts",
-    kind: "Tree crop",
+    kind: "Cash Crops",
     note: "Dried shea kernels, the quiet start of butter and fat.",
     image: "/media/images/img_35_shea_nut.jpg",
     alt: "A close view of dried shea nuts",
   },
   {
     name: "Shea butter",
-    kind: "Tree crop",
+    kind: "Cash Crops",
     note: "Fresh butter, ivory and supple, ready for cosmetic and food use.",
     image: "/media/images/img_19_shea_butter.jpg",
     alt: "Fresh shea butter opened for inspection",
   },
   {
     name: "Cocoa liquor",
-    kind: "Tree crop",
+    kind: "Cash Crops",
     note: "Warm cocoa mass, ground from Ghanaian bean.",
     image: "/media/images/img_22_cocoa_liquor.jpg",
     alt: "Glossy cocoa liquor in a mill",
   },
   {
     name: "Cocoa cake",
-    kind: "Tree crop",
+    kind: "Cash Crops",
     note: "Pressed cocoa cake, dense and aromatic.",
     image: "/media/images/img_24_cocoa_cake.jpg",
     alt: "Broken pieces of cocoa cake",
   },
   {
     name: "Cocoa powder",
-    kind: "Tree crop",
+    kind: "Cash Crops",
     note: "Natural and alkalized powder, 10 to 12 percent fat.",
     image: "/media/images/img_21_cocoa_powder.jpg",
     alt: "Natural and alkalized cocoa powder side by side",
@@ -201,16 +201,16 @@ export const products = [
   {
     name: "Annatto",
     kind: "Herbal",
-    note: "Pods and seed for natural colour in food and care.",
-    image: "/media/images/img_26_annatto_pods.jpg",
-    alt: "Red annatto pods laid out to dry",
+    note: "Seed for natural colour in food and care.",
+    image: "/media/images/img_29_annatto_seed.jpg",
+    alt: "Bright red annatto seed",
   },
   {
     name: "Grain of paradise",
     kind: "Herbal",
-    note: "Aframomum pods and warm brown seed, the pepper of the forest.",
-    image: "/media/images/img_28_paradise_pods.jpg",
-    alt: "Grain of paradise pods opened to show seed",
+    note: "Fresh Aframomum pods and warm brown seed, the pepper of the forest.",
+    image: "/media/images/img_26_annatto_pods.jpg",
+    alt: "Fresh grain of paradise pods",
   },
   {
     name: "Dry ginger",
@@ -235,7 +235,7 @@ export const products = [
   },
   {
     name: "Coffee beans",
-    kind: "Tree crop",
+    kind: "Cash Crops",
     note: "Green coffee, held for roasters who want origin character.",
     image: "/media/images/img_31_coffee_bean.jpg",
     alt: "Green coffee beans",
@@ -305,6 +305,16 @@ export const films = [
     poster: "/media/images/img_24_cocoa_cake.jpg",
   },
   {
+    title: "Cocoa shells, close",
+    src: "/media/videos/vid_12_cocoa_shells_close.mp4",
+    poster: "/media/images/img_37_cocoa_shells_close.jpg",
+  },
+  {
+    title: "Cocoa shells, loading",
+    src: "/media/videos/vid_13_cocoa_shells_loading.mp4",
+    poster: "/media/images/img_38_cocoa_shells_loading.jpg",
+  },
+  {
     title: "Irvingia",
     src: "/media/videos/vid_10_irvingia.mp4",
     poster: "/media/images/img_36_shea_nut_sack.jpg",
@@ -317,6 +327,8 @@ export const films = [
 ];
 
 export const gallery = [
+  { src: "/media/images/img_39_company_building.jpg", label: "The company building" },
+  { src: "/media/images/img_40_company_front.jpg", label: "Company front view" },
   { src: "/media/images/img_02_sesame_tray.jpg", label: "Sesame, prepared" },
   { src: "/media/images/img_10_cashew_clean.jpg", label: "Cashew, clean lot" },
   { src: "/media/images/img_13_voacanga_harvest.jpg", label: "Voacanga harvest" },
@@ -324,7 +336,8 @@ export const gallery = [
   { src: "/media/images/img_16_hibiscus_close.jpg", label: "Hibiscus calyx" },
   { src: "/media/images/img_17_shea_butter_wrap.jpg", label: "Shea, wrapped" },
   { src: "/media/images/img_25_cocoa_cake_lot.jpg", label: "Cocoa cake lot" },
-  { src: "/media/images/img_27_paradise_seed.jpg", label: "Paradise seed" },
+  { src: "/media/images/img_28_paradise_pods.jpg", label: "Paradise pods, opened" },
+  { src: "/media/images/img_26_annatto_pods.jpg", label: "Fresh paradise pods" },
   { src: "/media/images/img_29_annatto_seed.jpg", label: "Annatto seed" },
   { src: "/media/images/img_11_voacanga_seed.jpg", label: "Voacanga seed" },
   { src: "/media/images/img_36_shea_nut_sack.jpg", label: "Shea in sack" },

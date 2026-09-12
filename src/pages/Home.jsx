@@ -58,10 +58,10 @@ export default function Home() {
             Ghana · Asia · America · Europe
           </p>
           <h1 className="rise mt-5 max-w-4xl font-display text-4xl leading-[0.95] font-semibold tracking-[-0.02em] sm:text-5xl md:text-7xl">
-            Premium Ghanaian seeds, tree crops, and agro produce for the world.
+            Premium Ghanaian seeds, cash crops, and agro produce for the world.
           </h1>
           <p className="rise mt-6 max-w-2xl text-xl font-light leading-relaxed text-ivory/90 md:text-2xl">
-            {company.name} sources herbal seed, tree crops, and cereals from known hands in Ghana,
+            {company.name} sources herbal seed, cash crops, and cereals from known hands in Ghana,
             then prepares them for buyers across Asia, America, and Europe.
           </p>
           <div className="rise mt-8 flex flex-wrap gap-3">
@@ -142,7 +142,7 @@ export default function Home() {
                 Crops we can stand behind.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-ink/75">
-                Herbal seed, tree crops, and agro produce prepared for export, when the season allows.
+                Herbal seed, cash crops, and agro produce prepared for export, when the season allows.
               </p>
             </div>
             <Link to="/products" className="inline-flex items-center gap-2 text-base font-semibold text-forest hover:underline">

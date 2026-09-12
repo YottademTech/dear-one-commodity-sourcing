@@ -3,7 +3,7 @@ import { CloseCircle } from "@solar-icons/react";
 import { also, products } from "../content.js";
 import { PageIntro } from "../components/Shell.jsx";
 
-const filters = ["All", "Herbal", "Tree crop", "Agro"];
+const filters = ["All", "Herbal", "Cash Crops", "Agro"];
 
 export default function Products() {
   const [filter, setFilter] = useState("All");

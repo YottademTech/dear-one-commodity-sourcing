@@ -79,37 +79,52 @@ export default function About() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:px-8 lg:grid-cols-12 lg:py-24">
-        <div className="lg:col-span-5">
-          <MapPoint className="size-[22px] text-gold" weight="Linear" />
-          <p className="mt-5 text-base uppercase tracking-[0.22em] text-forest">The address</p>
-          <h2 className="mt-4 font-display text-4xl leading-none text-deep sm:text-5xl">
-            Kokrobite, near the ocean hill.
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-ink/80">
-            The principal place of business is an unnumbered house in Kokrobite, near LMB Ocean Hill, in the city of Accra.
-          </p>
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <MapPoint className="size-[22px] text-gold" weight="Linear" />
+            <p className="mt-5 text-base uppercase tracking-[0.22em] text-forest">The address</p>
+            <h2 className="mt-4 font-display text-4xl leading-none text-deep sm:text-5xl">
+              Kokrobite, near the ocean hill.
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-ink/80">
+              The principal place of business is in Kokrobite, near LMB Ocean Hill, in the city of Accra.
+            </p>
+          </div>
+          <div className="rounded-[1.8rem] bg-paper p-6 shadow-sm shadow-forest/5 sm:p-8 lg:col-span-7">
+            <dl className="grid gap-6 sm:grid-cols-2">
+              <Detail label="Building" value="Kokrobite" />
+              <Detail label="Street" value="Near LMB Ocean Hill" />
+              <Detail label="City" value="Accra" />
+              <Detail label="District" value="Ga South" />
+              <Detail label="Region" value="Greater Accra" />
+              <Detail label="Country" value="Ghana" />
+              <Detail label="Digital address" value="GS-0701-9116" />
+              <Detail label="Postal" value="P.O. Box AN 1578, Accra North, Greater Accra" />
+            </dl>
+            <a
+              href={company.mapLink}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-2 text-lg text-forest hover:underline"
+            >
+              Find us on the map
+              <ArrowRight className="size-4" weight="Linear" />
+            </a>
+          </div>
         </div>
-        <div className="rounded-[1.8rem] bg-paper p-6 shadow-sm shadow-forest/5 sm:p-8 lg:col-span-7">
-          <dl className="grid gap-6 sm:grid-cols-2">
-            <Detail label="Building" value="Unnumbered house, Kokrobite" />
-            <Detail label="Street" value="Near LMB Ocean Hill" />
-            <Detail label="City" value="Accra" />
-            <Detail label="District" value="Ga South" />
-            <Detail label="Region" value="Greater Accra" />
-            <Detail label="Country" value="Ghana" />
-            <Detail label="Digital address" value="GS-0701-9116" />
-            <Detail label="Postal" value="P.O. Box AN 1578, Accra North, Greater Accra" />
-          </dl>
-          <a
-            href={company.mapLink}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-2 text-lg text-forest hover:underline"
-          >
-            Find us on the map
-            <ArrowRight className="size-4" weight="Linear" />
-          </a>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <img
+            src="/media/images/img_39_company_building.jpg"
+            alt="Dear One Commodity Sourcing Enterprise building in Kokrobite"
+            className="h-72 w-full rounded-[1.8rem] object-cover md:h-[26rem]"
+          />
+          <img
+            src="/media/images/img_40_company_front.jpg"
+            alt="Front view of the Dear One company building in Kokrobite"
+            className="h-72 w-full rounded-[1.8rem] object-cover md:h-[26rem]"
+          />
         </div>
       </section>
 
