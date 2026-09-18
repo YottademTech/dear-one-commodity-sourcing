@@ -6,3 +6,5 @@ _frames
 .env
 .env.*
 !.env.example
+emailjs/browser-test.html
+public/emailjs-test.html
