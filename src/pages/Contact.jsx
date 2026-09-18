@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, ClockCircle, Letter, MapPoint, Phone, SquareArrowRightUp } from "@solar-icons/react";
 import { company } from "../content.js";
+import { isEmailJsConfigured, sendContactForm } from "../lib/emailjs.js";
 
 const ways = [
   {
@@ -32,6 +33,8 @@ const ways = [
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   return (
     <main className="bg-ivory">
@@ -105,21 +108,39 @@ export default function Contact() {
 
           <form
             className="rounded-[2rem] bg-paper p-6 shadow-sm shadow-forest/5 sm:p-8 lg:col-span-8"
-            onSubmit={(event) => {
+            onSubmit={async (event) => {
               event.preventDefault();
+              setLoading(true);
+              setSubmitError(null);
+
+              if (!isEmailJsConfigured()) {
+                setSubmitError("The contact form is not configured yet. Please email us directly.");
+                setLoading(false);
+                return;
+              }
+
               const data = new FormData(event.currentTarget);
-              const subject = `Contact: ${data.get("topic")}`;
-              const body = [
-                `Name: ${data.get("name")}`,
-                `Company: ${data.get("company")}`,
-                `Email: ${data.get("email")}`,
-                `Phone: ${data.get("phone")}`,
-                `Topic: ${data.get("topic")}`,
-                "",
-                data.get("note"),
-              ].join("\n");
-              window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-              setSent(true);
+
+              try {
+                await sendContactForm({
+                  name: String(data.get("name") || ""),
+                  company: String(data.get("company") || ""),
+                  email: String(data.get("email") || ""),
+                  phone: String(data.get("phone") || ""),
+                  topic: String(data.get("topic") || ""),
+                  message: String(data.get("note") || ""),
+                });
+                setSent(true);
+                event.currentTarget.reset();
+              } catch (err) {
+                setSubmitError(
+                  err instanceof Error && err.message.startsWith("Missing VITE_")
+                    ? "The contact form is not configured yet. Please email us directly."
+                    : "Unable to send your message. Please try again or email us directly.",
+                );
+              } finally {
+                setLoading(false);
+              }
             }}
           >
             <div className="grid gap-4 md:grid-cols-2">
@@ -139,13 +160,25 @@ export default function Contact() {
                 placeholder="Crop, grade, volume, and the port you have in mind."
               />
             </label>
-            <button className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 text-base text-ivory transition hover:bg-canopy">
-              Send the message
+            <button
+              type="submit"
+              disabled={loading || sent}
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 text-base text-ivory transition hover:bg-canopy disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {loading ? "Sending…" : "Send the message"}
               <ArrowRight className="size-4" weight="Linear" />
             </button>
+            {submitError && (
+              <p className="mt-4 text-lg text-deep">
+                {submitError}{" "}
+                <a href={`mailto:${company.email}`} className="underline">
+                  {company.email}
+                </a>
+              </p>
+            )}
             {sent && (
               <p className="mt-4 text-lg text-forest">
-                Received. Your mail is ready to leave, and our team will answer from Kokrobite.
+                Received. Your message has been sent, and our team will answer from Kokrobite.
               </p>
             )}
           </form>
