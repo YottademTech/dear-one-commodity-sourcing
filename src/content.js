@@ -6,7 +6,7 @@ export const company = {
   phone: "+233242154426",
   phoneHref: "tel:+233242154426",
   whatsapp: "https://wa.me/233242154426",
-  email: "test@mail.com",
+  email: "info@dearoneghana.com",
   mapEmbed: "https://maps.google.com/maps?q=Kokrobite%2C%20Ghana&z=14&output=embed",
   mapLink: "https://www.google.com/maps/search/?api=1&query=Kokrobite%2C%20Ghana",
   logo: "/media/brand/logo.png",
