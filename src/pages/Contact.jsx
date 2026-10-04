@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ArrowRight, ClockCircle, Letter, MapPoint, Phone, SquareArrowRightUp } from "@solar-icons/react";
+import Toast from "../components/Toast.jsx";
 import { company } from "../content.js";
 import { isEmailJsConfigured, sendContactForm } from "../lib/emailjs.js";
 
@@ -32,9 +33,10 @@ const ways = [
 ];
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [submitError, setSubmitError] = useState(null);
+  const [toast, setToast] = useState(null);
+
+  const clearToast = useCallback(() => setToast(null), []);
 
   return (
     <main className="bg-ivory">
@@ -110,16 +112,22 @@ export default function Contact() {
             className="rounded-[2rem] bg-paper p-6 shadow-sm shadow-forest/5 sm:p-8 lg:col-span-8"
             onSubmit={async (event) => {
               event.preventDefault();
+              const form = event.currentTarget;
               setLoading(true);
-              setSubmitError(null);
+              setToast(null);
 
               if (!isEmailJsConfigured()) {
-                setSubmitError("The contact form is not configured yet. Please email us directly.");
+                setToast({
+                  tone: "error",
+                  title: "Not configured",
+                  message: "The contact form is not configured yet. Please email us directly.",
+                  showEmail: true,
+                });
                 setLoading(false);
                 return;
               }
 
-              const data = new FormData(event.currentTarget);
+              const data = new FormData(form);
 
               try {
                 await sendContactForm({
@@ -130,14 +138,23 @@ export default function Contact() {
                   topic: String(data.get("topic") || ""),
                   message: String(data.get("note") || ""),
                 });
-                setSent(true);
-                event.currentTarget.reset();
+                form.reset();
+                setToast({
+                  tone: "success",
+                  title: "Message sent",
+                  message: "Received. Your message has been sent, and our team will answer shortly.",
+                });
               } catch (err) {
-                setSubmitError(
-                  err instanceof Error && err.message.startsWith("Missing VITE_")
-                    ? "The contact form is not configured yet. Please email us directly."
-                    : "Unable to send your message. Please try again or email us directly.",
-                );
+                console.error("Contact form EmailJS error:", err);
+                setToast({
+                  tone: "error",
+                  title: "Could not send",
+                  message:
+                    err instanceof Error && err.message.startsWith("Missing VITE_")
+                      ? "The contact form is not configured yet. Please email us directly."
+                      : "Unable to send your message. Please try again or email us directly.",
+                  showEmail: true,
+                });
               } finally {
                 setLoading(false);
               }
@@ -162,28 +179,32 @@ export default function Contact() {
             </label>
             <button
               type="submit"
-              disabled={loading || sent}
+              disabled={loading}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 text-base text-ivory transition hover:bg-canopy disabled:cursor-not-allowed disabled:opacity-60"
             >
               {loading ? "Sending…" : "Send the message"}
               <ArrowRight className="size-4" weight="Linear" />
             </button>
-            {submitError && (
-              <p className="mt-4 text-lg text-deep">
-                {submitError}{" "}
-                <a href={`mailto:${company.email}`} className="underline">
-                  {company.email}
-                </a>
-              </p>
-            )}
-            {sent && (
-              <p className="mt-4 text-lg text-forest">
-                Received. Your message has been sent, and our team will answer from Kokrobite.
-              </p>
-            )}
           </form>
         </div>
       </section>
+
+      <Toast
+        open={Boolean(toast)}
+        tone={toast?.tone}
+        title={toast?.title}
+        onClose={clearToast}
+      >
+        {toast?.message}
+        {toast?.showEmail && (
+          <>
+            {" "}
+            <a href={`mailto:${company.email}`} className="underline underline-offset-2">
+              {company.email}
+            </a>
+          </>
+        )}
+      </Toast>
     </main>
   );
 }
