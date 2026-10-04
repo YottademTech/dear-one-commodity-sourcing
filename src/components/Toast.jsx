@@ -16,7 +16,7 @@ export default function Toast({ open, tone = "success", title, children, onClose
     <div
       role="status"
       aria-live="polite"
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-[80] flex justify-center p-4 sm:bottom-6 sm:justify-end sm:p-6"
+      className="pointer-events-none fixed inset-x-0 bottom-16 z-[80] flex justify-center p-4 sm:justify-end sm:p-5"
     >
       <div
         className={`toast-enter pointer-events-auto flex w-full max-w-md gap-3 rounded-[1.4rem] border px-5 py-4 shadow-lg shadow-deep/20 ${
